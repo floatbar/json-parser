@@ -30,12 +30,18 @@ const char *parse(char body[], int pos) {
 }
 
 int main() {
-    char body[] = "{\"username\": \"eloquent\", \"password\": \"Eloquent_1111\"}";
+    char body[] = "{\"username\":\"eloquent\", \"password\":\"Eloquent_1111\"}";
 
-    const char *username = parse(body, 0);
-    const char *password = parse(body, 1);
-
-    printf("%s", username);
+    const char *username_tmp = parse(body, 0);
+    const char *password_tmp = parse(body, 1);
+    
+    char username[strlen(username_tmp)];
+    char password[strlen(password_tmp)];
+    
+    strcpy(username, username_tmp);
+    strcpy(password, password_tmp);
+    
+    printf("%s\n", username);
     printf("%s", password);
     
     return 0;
