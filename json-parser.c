@@ -29,7 +29,7 @@ const char *parse(char body[], int pos) {
     }
 }
 
-int main() {
+int main(void) {
     char body[] = "{\"username\":\"eloquent\", \"password\":\"Eloquent_1111\"}";
 
     const char *username_tmp = parse(body, 0);
